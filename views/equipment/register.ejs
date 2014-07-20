@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设备使用登记</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/equipment/justified-nav.css" rel="stylesheet">
+    <link href="/stylesheets/equipment/equip-global.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="masthead">
+        <h3 class="text-muted">设备使用登记</h3>
+        <ul class="nav nav-justified">
+            <li><a href="/equipment/index">首页</a>
+            </li>
+            <li class="active"><a href="/equipment/record_list">设备使用登记</a>
+            </li>
+            <li><a href="/equipment/add">添加新设备</a>
+            </li>
+            <li><a href="/equipment/my">我的设备</a>
+            </li>
+            <li><a href="/equipment/about">关于</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid margin-top">
+        <!-- Example row of columns -->
+        <div class="row">
+            <% if(list.length > 0) { %>
+            <dl class="dl-horizontal">
+                <dt>设备编号</dt>
+                <dd><%= list[0].id %></dd>
+                <dt>设备名</dt>
+                <dd><%= list[0].equip_name %></dd>
+                <dt>设备所属人</dt>
+                <dd><%= list[0].storeman %></dd>
+                <dt>设备所属部门</dt>
+                <dd><%= list[0].department %></dd>
+                <dt>设备持有人</dt>
+                <dd><%= list[0].holder %></dd>
+                <dt>标签</dt>
+                <dd><%= list[0].tags %></dd>
+                <dt>备注</dt>
+                <dd><%= list[0].remark %></dd>
+            </dl>
+            <% } %>
+        </div>
+        <div class="row margin-top">
+            <div class="navbar-form navbar-left">
+                <button type="button" class="btn btn-success" id="js_i_hold">我当前持有它</button>
+                <button type="button" class="btn btn-link" id="js_other_hold">帮其他人登记</button>
+            </div>
+        </div>
+        <div class="row margin-top">
+            <div class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text"  id="js_holder_text" class="form-control" placeholder="当前持有人英文名">
+                </div>
+                <button type="button"  id="js_register_btn" class="btn btn-default">登记</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <div class="footer">
+        <p>© Company 2014</p>
+    </div>
+
+</div>
+<!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script type="text/javascript" src="/javascripts/equipment/jquery-2.1.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<!-- Placed at the end of the document so the pages load faster -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+        请填写所有表单
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">好的</button>
+        <button type="button" class="btn btn-default hide">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/javascripts/equipment/app.js"></script>
+<script type="text/javascript" src="/javascripts/equipment/register_f.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设备使用登记</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/equipment/justified-nav.css" rel="stylesheet">
+    <link href="/stylesheets/equipment/equip-global.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="/javascripts/equipment/jquery-2.1.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="masthead">
+        <h3 class="text-muted">设备使用登记</h3>
+        <ul class="nav nav-justified">
+            <li><a href="/equipment/index">首页</a>
+            </li>
+            <li><a href="/equipment/record_list">设备使用登记</a>
+            </li>
+            <li class="active"><a href="/equipment/add">添加新设备</a>
+            </li>
+            <li><a href="/equipment/my">我的设备</a>
+            </li>
+            <li><a href="/equipment/about">关于</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid margin-top">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-lg-8" id="js_form_warp">
+                <form class="form-horizontal" role="form" id="add_form" name="add_form" >
+                    <div class="form-group">
+                        <label for="equip_name" class="col-sm-2 control-label">设备名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="equip_name" name="equip_name" placeholder="设备名" require data-empty="设备名不能为空" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="storeman" class="col-sm-2 control-label">设备所属人</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="storeman" name="storeman" placeholder="设备所属人" require data-empty="设备所属人不能为空" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="department" class="col-sm-2 control-label">设备所属部门</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="department" name="department" placeholder="设备所属部门" require data-empty="设备所属部门不能为空">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="holder" class="col-sm-2 control-label">当前持有人</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="holder" name="holder" placeholder="当前持有人" require data-empty="当前持有人不能为空">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags" class="col-sm-2 control-label">标签</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="tags" name="tags" placeholder="多个标签请用“|”隔开">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags" class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3" id="remark" name="remark"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-primary" id="js_add_btn">添加设备</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger hide" role="alert" id="js_alert">这是警示框</div>
+                    </div>
+                    
+                    <div class="form-group" id="js_form_warp">
+                        
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="col-lg-8 hide" id="js_res_warp">
+                <!-- 
+                    alert-success alert-info alert-warning alert-danger
+                -->
+                <div class="alert" role="alert"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <div class="footer">
+        <p>© Company 2014</p>
+    </div>
+
+</div>
+<!-- /container -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+        请填写所有表单
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">好的</button>
+        <button type="button" class="btn btn-default hide">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+
+<script type="text/javascript" src="/javascripts/equipment/app.js"></script>
+<script type="text/javascript" src="/javascripts/equipment/add_f.js"></script>
+
+</body>
+
+</html>
