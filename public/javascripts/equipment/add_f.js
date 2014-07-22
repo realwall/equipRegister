@@ -31,7 +31,7 @@ var Logic = {
                 //     'content': $(item).data('empty')
                 // });
                 Eapp.alert.show({
-                    'id': 'js_form_warp',
+                    'id': 'js_form_check',
                     'content': $(item).data('empty')
                 });
             }
@@ -42,7 +42,7 @@ var Logic = {
         if(!Logic.checkForm('add_form')){
             return ;
         };
-        Eapp.alert.hide({'id': 'js_form_warp'});
+        Eapp.alert.hide({'id': 'js_form_check'});
         e.preventDefault();
         var param = $('#add_form').serialize();
         $.ajax({
