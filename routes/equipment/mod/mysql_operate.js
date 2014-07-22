@@ -72,7 +72,7 @@ var Logic = {
      * @date 2014-7-15
      */
     'select': function(config){
-        var sqlStr = config.sql || "select * from equip";
+        var sqlStr = config.sql || "select * from equip order by id desc";
         console.log(sqlStr);
         // 执行SQL语句
         config.pool.getConnection(function(err, connection){

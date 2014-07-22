@@ -49,18 +49,19 @@
             </dl>
             <% } %>
         </div>
-        <div class="row margin-top">
+        <div class="row margin-top" id="js_i_warp">
             <div class="navbar-form navbar-left">
                 <button type="button" class="btn btn-success" id="js_i_hold">我当前持有它</button>
                 <button type="button" class="btn btn-link" id="js_other_hold">帮其他人登记</button>
             </div>
         </div>
-        <div class="row margin-top">
+        <div class="row margin-top hide"  id="js_other_warp">
             <div class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text"  id="js_holder_text" class="form-control" placeholder="当前持有人英文名">
                 </div>
                 <button type="button"  id="js_register_btn" class="btn btn-default">登记</button>
+                <button type="button" class="btn btn-link" id="js_back_i">返回</button>
             </div>
         </div>
     </div>

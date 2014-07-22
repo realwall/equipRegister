@@ -35,4 +35,6 @@ exports.route = function(router){
 
     // 设备登记页面展示
     router.get('/equipment/register/:id', requireMod.register.init);
+    // 设备登记
+    router.post('/equipment/register/add', requireMod.register.add);
 };

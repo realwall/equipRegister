@@ -30,15 +30,16 @@ var Logic = {
         // });
         res.render('equipment/register', { title: 'Express' , list: result});
     },
-    'register': function(req, res){
+    'add': function(req, res){
+        console.log(JSON.stringify(req.body));
         var data = req.body;
-        data.register_date = (new Date()).getTime();
+        data.pass_time = (new Date()).getTime();
         data.recorder = req.body.recorder || 'unknow';
         for(var key in data){
             data[key] = data[key].toString().replace(/\'/g, ' ').replace(/\"/g, ' ').replace(/\;/g, ' ');
         }
         var config = {
-            'table': 'equip',
+            'table': 'pass',
             'data': data,
             'pool': mysqlOperate.getPool(),
             'success': function(err, result){
@@ -59,7 +60,7 @@ module.exports = {
         Logic.init(req, res);
         // res.render('equipment/register', { title: 'Express' });
     },
-    'register': function(req, res){
-        Logic.register(req, res);
+    'add': function(req, res){
+        Logic.add(req, res);
     }
 };

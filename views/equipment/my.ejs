@@ -36,76 +36,24 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Column heading</th>
-                        <th>Column heading</th>
-                        <th>Column heading</th>
+                        <th>设备编号</th>
+                        <th>设备名</th>
+                        <th>设备所属人</th>
+                        <th>添加到该系统的时间</th>
                     </tr>
                 </thead>
                 <tbody>
-                <%= console.log(JSON.stringify(list)) %>
+                    <!--
+                        tr的class可以为active,success,info,warning,danger
+                    -->
                 <% for(var i=0; i<list.length; i++) { %>
                     <tr class="<%= list[i].tr_class %>">
                         <td><%= list[i].id %></td>
-                        <td><%= list[i].equip_name %></td>
+                        <td><a href="/equipment/register/<%= list[i].id %>"><%= list[i].equip_name %></a></td>
                         <td><%= list[i].storeman %></td>
                         <td><%= list[i].register_date %></td>
                     </tr>
                 <% } %>
-                    <tr class="active">
-                        <td>1</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="success">
-                        <td>3</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="info">
-                        <td>5</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="warning">
-                        <td>7</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="danger">
-                        <td>9</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
